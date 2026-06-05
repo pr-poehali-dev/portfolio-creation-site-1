@@ -46,7 +46,7 @@ const Index = () => {
           onClick={() => scrollTo("hero")}
           className="font-display text-xl font-light tracking-widest uppercase hover:opacity-60 transition-opacity"
         >
-          Имя Фамилия
+          Горычева Виктория
         </button>
         <div className="hidden md:flex items-center gap-10">
           <button
