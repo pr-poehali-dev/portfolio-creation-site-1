@@ -28,7 +28,6 @@ const projects = [
   },
 ];
 
-const skills = ["Стратегия", "Дизайн", "Разработка", "Брендинг", "Фотография"];
 
 const Index = () => {
   const [activeProject, setActiveProject] = useState<number | null>(null);
@@ -134,42 +133,14 @@ const Index = () => {
           <div>
             <p className="text-xs tracking-[0.3em] uppercase text-[#888] mb-8">01 / О себе</p>
             <h2 className="font-display text-5xl md:text-6xl font-light leading-tight mb-8">
-              Привет, я —<br />
-              <em className="italic">Имя</em>
+              Горычева<br />
+              <em className="italic">Виктория</em>
             </h2>
           </div>
           <div className="space-y-6 pt-16">
             <p className="text-lg font-light leading-relaxed text-[#444]">
-              Расскажите здесь о себе — кто вы, чем занимаетесь, какой опыт есть за плечами. Это место для вашей истории.
+              Студентка 1 курса академической группы «Педагогическое образование. История и Обществознание» Тихоокеанского Государственного Университета.
             </p>
-            <p className="text-lg font-light leading-relaxed text-[#444]">
-              Несколько предложений о вашем подходе к работе, ценностях или уникальном взгляде на профессию.
-            </p>
-            <div className="pt-8 border-t border-[#1a1a1a]/10">
-              <p className="text-xs tracking-[0.2em] uppercase text-[#888] mb-4">Специализация</p>
-              <div className="flex flex-wrap gap-3">
-                {skills.map((skill) => (
-                  <span
-                    key={skill}
-                    className="text-sm px-4 py-2 border border-[#1a1a1a]/20 rounded-full hover:border-[#C8A96E] hover:text-[#C8A96E] transition-colors cursor-default"
-                  >
-                    {skill}
-                  </span>
-                ))}
-              </div>
-            </div>
-            <div className="pt-6 grid grid-cols-3 gap-6">
-              {[
-                { num: "5+", label: "Лет опыта" },
-                { num: "30+", label: "Проектов" },
-                { num: "20+", label: "Клиентов" },
-              ].map(({ num, label }) => (
-                <div key={label}>
-                  <p className="font-display text-4xl font-light text-[#C8A96E]">{num}</p>
-                  <p className="text-xs tracking-widest uppercase text-[#888] mt-1">{label}</p>
-                </div>
-              ))}
-            </div>
           </div>
         </div>
       </section>
