@@ -1,36 +1,10 @@
 import { useState } from "react";
 import Icon from "@/components/ui/icon";
 
-const projects = [
-  {
-    id: 1,
-    title: "Проект первый",
-    category: "Дизайн",
-    year: "2024",
-    image: "https://cdn.poehali.dev/projects/e9a9ff50-92e9-4df0-9e82-eff31bda857b/files/31a22509-2b89-40b9-8576-f47273421d6e.jpg",
-    description: "Краткое описание проекта — чем занимались, какую задачу решили.",
-  },
-  {
-    id: 2,
-    title: "Проект второй",
-    category: "Разработка",
-    year: "2024",
-    image: "https://cdn.poehali.dev/projects/e9a9ff50-92e9-4df0-9e82-eff31bda857b/files/89264956-f5df-4160-a18f-aec1a5c26ea0.jpg",
-    description: "Краткое описание проекта — чем занимались, какую задачу решили.",
-  },
-  {
-    id: 3,
-    title: "Проект третий",
-    category: "Фотография",
-    year: "2023",
-    image: "https://cdn.poehali.dev/projects/e9a9ff50-92e9-4df0-9e82-eff31bda857b/files/f9ec6895-0f3b-402b-bb91-1c5caeda1e45.jpg",
-    description: "Краткое описание проекта — чем занимались, какую задачу решили.",
-  },
-];
+
 
 
 const Index = () => {
-  const [activeProject, setActiveProject] = useState<number | null>(null);
   const [menuOpen, setMenuOpen] = useState(false);
 
   const scrollTo = (id: string) => {
@@ -148,50 +122,121 @@ const Index = () => {
       {/* Works */}
       <section id="works" className="px-8 md:px-16 py-32 border-t border-[#1a1a1a]/10">
         <div className="max-w-6xl mx-auto">
-          <div className="flex items-end justify-between mb-16">
-            <div>
-              <p className="text-xs tracking-[0.3em] uppercase text-[#888] mb-4">02 / Работы</p>
-              <h2 className="font-display text-5xl md:text-6xl font-light leading-tight">
-                Избранные<br />
-                <em className="italic">проекты</em>
-              </h2>
-            </div>
+          <div className="mb-16">
+            <p className="text-xs tracking-[0.3em] uppercase text-[#888] mb-4">02 / Работы</p>
+            <h2 className="font-display text-5xl md:text-6xl font-light leading-tight">
+              Мои<br />
+              <em className="italic">работы</em>
+            </h2>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {projects.map((project) => (
-              <div
-                key={project.id}
-                className="group cursor-pointer"
-                onMouseEnter={() => setActiveProject(project.id)}
-                onMouseLeave={() => setActiveProject(null)}
-              >
-                <div className="relative overflow-hidden aspect-[4/3] mb-5 bg-[#eee]">
-                  <img
-                    src={project.image}
-                    alt={project.title}
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                  />
-                  <div className="absolute inset-0 bg-[#1a1a1a]/0 group-hover:bg-[#1a1a1a]/30 transition-all duration-500 flex items-end p-6">
-                    <p
-                      className="text-white text-sm font-light leading-relaxed opacity-0 group-hover:opacity-100 transition-opacity duration-500 translate-y-2 group-hover:translate-y-0"
-                      style={{ transitionDelay: "0.1s" }}
-                    >
-                      {project.description}
-                    </p>
-                  </div>
-                </div>
-                <div className="flex items-start justify-between">
-                  <div>
-                    <h3 className="font-display text-xl font-light group-hover:text-[#C8A96E] transition-colors">
-                      {project.title}
-                    </h3>
-                    <p className="text-sm text-[#888] mt-1 tracking-wide">{project.category}</p>
-                  </div>
-                  <span className="text-sm text-[#888]">{project.year}</span>
-                </div>
+          <div className="grid md:grid-cols-2 gap-8">
+
+            {/* Работа 1 — ссылки */}
+            <div className="border border-[#1a1a1a]/10 rounded-2xl p-8 flex flex-col gap-6 hover:border-[#C8A96E]/50 transition-colors">
+              <div>
+                <p className="text-xs tracking-[0.2em] uppercase text-[#888] mb-2">Работа 1</p>
+                <h3 className="font-display text-2xl font-light">Интерактивные задания</h3>
               </div>
-            ))}
+              <div className="flex flex-col gap-3 mt-auto">
+                <a
+                  href="https://usld.ru/ru/challenges/T51L1nCUIk5RQqRQ0uBE"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-3 group/link text-sm text-[#444] hover:text-[#C8A96E] transition-colors"
+                >
+                  <Icon name="ExternalLink" size={14} className="shrink-0 text-[#C8A96E]" />
+                  usld.ru — задание
+                </a>
+                <a
+                  href="https://www.mindomo.com/mindmap/ecbce1952a5944be894aaf3e11e2df77"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-3 text-sm text-[#444] hover:text-[#C8A96E] transition-colors"
+                >
+                  <Icon name="ExternalLink" size={14} className="shrink-0 text-[#C8A96E]" />
+                  mindomo.com — интеллект-карта
+                </a>
+              </div>
+            </div>
+
+            {/* Работа 2 — картинки */}
+            <div className="border border-[#1a1a1a]/10 rounded-2xl p-8 flex flex-col gap-6 hover:border-[#C8A96E]/50 transition-colors">
+              <div>
+                <p className="text-xs tracking-[0.2em] uppercase text-[#888] mb-2">Работа 2</p>
+                <h3 className="font-display text-2xl font-light">Буклет «Лапа Помощи»</h3>
+              </div>
+              <div className="grid grid-cols-3 gap-2">
+                <a href="https://cdn.poehali.dev/projects/e9a9ff50-92e9-4df0-9e82-eff31bda857b/bucket/3cc9359c-0004-4a54-ba41-b20346122119.png" target="_blank" rel="noopener noreferrer">
+                  <img
+                    src="https://cdn.poehali.dev/projects/e9a9ff50-92e9-4df0-9e82-eff31bda857b/bucket/3cc9359c-0004-4a54-ba41-b20346122119.png"
+                    alt="Буклет страница 1"
+                    className="w-full aspect-[3/4] object-cover rounded-lg hover:opacity-80 transition-opacity cursor-zoom-in"
+                  />
+                </a>
+                <a href="https://cdn.poehali.dev/projects/e9a9ff50-92e9-4df0-9e82-eff31bda857b/bucket/ddccaf72-b2b9-4c74-b7ee-9320ae012f04.png" target="_blank" rel="noopener noreferrer">
+                  <img
+                    src="https://cdn.poehali.dev/projects/e9a9ff50-92e9-4df0-9e82-eff31bda857b/bucket/ddccaf72-b2b9-4c74-b7ee-9320ae012f04.png"
+                    alt="Буклет страница 2"
+                    className="w-full aspect-[3/4] object-cover rounded-lg hover:opacity-80 transition-opacity cursor-zoom-in"
+                  />
+                </a>
+                <a href="https://cdn.poehali.dev/projects/e9a9ff50-92e9-4df0-9e82-eff31bda857b/bucket/4a1a0625-1ea4-4c57-a505-28156f70b6e2.png" target="_blank" rel="noopener noreferrer">
+                  <img
+                    src="https://cdn.poehali.dev/projects/e9a9ff50-92e9-4df0-9e82-eff31bda857b/bucket/4a1a0625-1ea4-4c57-a505-28156f70b6e2.png"
+                    alt="Буклет страница 3"
+                    className="w-full aspect-[3/4] object-cover rounded-lg hover:opacity-80 transition-opacity cursor-zoom-in"
+                  />
+                </a>
+              </div>
+            </div>
+
+            {/* Работа 3 — ссылка */}
+            <div className="border border-[#1a1a1a]/10 rounded-2xl p-8 flex flex-col gap-6 hover:border-[#C8A96E]/50 transition-colors">
+              <div>
+                <p className="text-xs tracking-[0.2em] uppercase text-[#888] mb-2">Работа 3</p>
+                <h3 className="font-display text-2xl font-light">Упражнение LearningApps</h3>
+              </div>
+              <div className="mt-auto">
+                <a
+                  href="https://learningapps.org/watch?v=p3vvbfy7226"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-3 text-sm text-[#444] hover:text-[#C8A96E] transition-colors"
+                >
+                  <Icon name="ExternalLink" size={14} className="shrink-0 text-[#C8A96E]" />
+                  learningapps.org
+                </a>
+              </div>
+            </div>
+
+            {/* Работа 4 — ссылки тесты */}
+            <div className="border border-[#1a1a1a]/10 rounded-2xl p-8 flex flex-col gap-6 hover:border-[#C8A96E]/50 transition-colors">
+              <div>
+                <p className="text-xs tracking-[0.2em] uppercase text-[#888] mb-2">Работа 4</p>
+                <h3 className="font-display text-2xl font-light">Онлайн-тесты</h3>
+              </div>
+              <div className="flex flex-col gap-3 mt-auto">
+                {[
+                  { href: "https://anketolog.ru/rs/1038877/RyGxbOnB", label: "Онлайн Тестпад" },
+                  { href: "https://forms.yandex.ru/u/6a2123ad90fa7b62dca14a44", label: "Яндекс Формы" },
+                  { href: "https://urok.1c.ru/share/task/2743dbc6f7da2d9a7cda23db0d62de94/", label: "1С Урок" },
+                  { href: "https://banktestov.ru/test/113781", label: "Банк тестов" },
+                ].map(({ href, label }) => (
+                  <a
+                    key={href}
+                    href={href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-3 text-sm text-[#444] hover:text-[#C8A96E] transition-colors"
+                  >
+                    <Icon name="ExternalLink" size={14} className="shrink-0 text-[#C8A96E]" />
+                    {label}
+                  </a>
+                ))}
+              </div>
+            </div>
+
           </div>
         </div>
       </section>
@@ -200,7 +245,7 @@ const Index = () => {
 
       {/* Footer */}
       <footer className="px-8 md:px-16 py-6 bg-[#1a1a1a] border-t border-white/10 flex items-center justify-between">
-        <p className="text-xs text-[#444] tracking-widest uppercase">© 2024 Имя Фамилия</p>
+        <p className="text-xs text-[#444] tracking-widest uppercase">© 2025 Горычева Виктория</p>
         <button
           onClick={() => scrollTo("hero")}
           className="flex items-center gap-2 text-xs text-[#444] hover:text-[#C8A96E] transition-colors tracking-widest uppercase"
