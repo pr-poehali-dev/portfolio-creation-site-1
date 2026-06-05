@@ -245,7 +245,7 @@ const Index = () => {
 
       {/* Footer */}
       <footer className="px-8 md:px-16 py-6 bg-[#1a1a1a] border-t border-white/10 flex items-center justify-between">
-        <p className="text-xs text-[#444] tracking-widest uppercase">© 2025 Горычева Виктория</p>
+        <p className="text-xs text-[#444] tracking-widest uppercase">© 2026 Горычева Виктория</p>
         <button
           onClick={() => scrollTo("hero")}
           className="flex items-center gap-2 text-xs text-[#444] hover:text-[#C8A96E] transition-colors tracking-widest uppercase"
