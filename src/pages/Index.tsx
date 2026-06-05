@@ -62,12 +62,7 @@ const Index = () => {
           >
             Работы
           </button>
-          <button
-            onClick={() => scrollTo("contact")}
-            className="text-sm tracking-widest uppercase hover:opacity-60 transition-opacity"
-          >
-            Контакт
-          </button>
+
         </div>
         <button
           className="md:hidden"
@@ -80,13 +75,13 @@ const Index = () => {
       {/* Mobile menu */}
       {menuOpen && (
         <div className="fixed inset-0 z-40 bg-[#F8F6F2] flex flex-col items-center justify-center gap-10 animate-fade-in-slow">
-          {["about", "works", "contact"].map((id) => (
+          {["about", "works"].map((id) => (
             <button
               key={id}
               onClick={() => scrollTo(id)}
               className="font-display text-4xl font-light tracking-widest uppercase"
             >
-              {id === "about" ? "О себе" : id === "works" ? "Работы" : "Контакт"}
+              {id === "about" ? "О себе" : "Работы"}
             </button>
           ))}
         </div>
@@ -107,23 +102,15 @@ const Index = () => {
           />
         </div>
 
-        <div className="opacity-0 animate-fade-in" style={{ animationDelay: "0.1s" }}>
-          <p className="text-sm tracking-[0.3em] uppercase text-[#888] mb-6">
-            Дизайнер · Разработчик · Творец
-          </p>
-        </div>
-
         <h1
           className="font-display text-[clamp(3rem,10vw,9rem)] font-light leading-[0.9] tracking-tight opacity-0 animate-fade-in"
           style={{ animationDelay: "0.2s" }}
         >
-          Создаю
+          Мои
           <br />
-          <em className="italic">вещи,</em>
+          <em className="italic">практические</em>
           <br />
-          которые
-          <br />
-          <span className="text-[#C8A96E]">работают.</span>
+          <span className="text-[#C8A96E]">работы.</span>
         </h1>
 
         <div
@@ -238,48 +225,7 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Contact */}
-      <section id="contact" className="px-8 md:px-16 py-32 border-t border-[#1a1a1a]/10 bg-[#1a1a1a] text-[#F8F6F2]">
-        <div className="max-w-6xl mx-auto">
-          <p className="text-xs tracking-[0.3em] uppercase text-[#888] mb-8">03 / Контакт</p>
-          <div className="grid md:grid-cols-2 gap-20 items-end">
-            <h2 className="font-display text-5xl md:text-7xl font-light leading-tight">
-              Давайте<br />
-              <em className="italic text-[#C8A96E]">работать</em><br />
-              вместе
-            </h2>
-            <div className="space-y-8">
-              <p className="text-lg font-light leading-relaxed text-[#aaa]">
-                Открыт к новым проектам и интересному сотрудничеству. Напишите — обсудим вашу идею.
-              </p>
-              <div className="space-y-4">
-                {[
-                  { label: "Email", value: "hello@example.com", icon: "Mail" },
-                  { label: "Telegram", value: "@username", icon: "Send" },
-                ].map(({ label, value, icon }) => (
-                  <div key={label} className="flex items-center gap-4 group cursor-pointer">
-                    <Icon name={icon} size={16} className="text-[#C8A96E]" />
-                    <div>
-                      <p className="text-xs tracking-widest uppercase text-[#666] mb-0.5">{label}</p>
-                      <p className="text-sm group-hover:text-[#C8A96E] transition-colors">{value}</p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-              <div className="flex gap-6 pt-4 border-t border-white/10">
-                {["Instagram", "Behance", "LinkedIn"].map((soc) => (
-                  <button
-                    key={soc}
-                    className="text-xs tracking-widest uppercase text-[#666] hover:text-[#C8A96E] transition-colors"
-                  >
-                    {soc}
-                  </button>
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+
 
       {/* Footer */}
       <footer className="px-8 md:px-16 py-6 bg-[#1a1a1a] border-t border-white/10 flex items-center justify-between">
